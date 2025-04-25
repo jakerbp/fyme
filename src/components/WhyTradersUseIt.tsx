@@ -1,19 +1,24 @@
 import { Button } from '@/components/ui/Button';
+import { Scale, Crosshair, ListChecks, Gauge } from 'lucide-react';
 
 const benefits = [
   {
+    icon: Scale,
     title: "Control Trading Emotions",
     description: "Stop fear, greed, and revenge trading. Manage anxiety and build resilience to stay calm under pressure.",
   },
   {
+    icon: Crosshair,
     title: "Make Sharper Decisions",
     description: "Identify and overcome cognitive biases. Improve trade rationale and execute with enhanced mental clarity.",
   },
   {
+    icon: ListChecks,
     title: "Build Lasting Discipline",
     description: "Cultivate consistency with structured reviews, habit-building prompts, and cognitive performance tracking.",
   },
   {
+    icon: Gauge,
     title: "Optimize Your Unique Edge",
     description: "Gain actionable insights from your data and learn how to spot triggers before they impact your P&L.",
   },
@@ -29,8 +34,11 @@ const WhyTradersUseIt = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 text-left">
           {benefits.map((benefit, index) => (
             <div key={index} className="p-6 bg-secondary-foreground text-primary-foreground rounded-lg shadow-sm flex flex-col">
-              <h3 className="text-xl font-semibold font-heading mb-2">{benefit.title}</h3>
-              <p className="flex-grow">{benefit.description}</p>
+              <h3 className="text-xl font-semibold font-heading mb-3 flex items-center gap-2">
+                <benefit.icon className="w-5 h-5 flex-shrink-0" />
+                {benefit.title}
+              </h3>
+              <p className="flex-grow opacity-80">{benefit.description}</p>
             </div>
           ))}
         </div>

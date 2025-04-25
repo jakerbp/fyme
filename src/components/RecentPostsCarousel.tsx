@@ -65,8 +65,7 @@ const RecentPostsCarousel: React.FC<RecentPostsCarouselProps> = ({ posts }) => {
   const showButtons = posts.length > 1;
 
   return (
-    <section className="mt-12 pt-8 border-t border-border">
-      <h2 className="text-2xl font-semibold mb-6 text-center md:text-left">More Recent Articles</h2>
+    <section className="mt-8">
       
       {/* Relative container for carousel and side buttons */}
       <div className="relative group">
@@ -85,7 +84,7 @@ const RecentPostsCarousel: React.FC<RecentPostsCarouselProps> = ({ posts }) => {
           </div>
         )}
 
-        <div className="overflow-hidden px-4" ref={emblaRef}>
+        <div className="overflow-hidden px-4 pb-2" ref={emblaRef}>
           <div className="flex -ml-4"> 
             {posts.map((post) => (
               <div key={post._meta.path} className="flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_calc(100%/3)] pl-4 min-w-0">

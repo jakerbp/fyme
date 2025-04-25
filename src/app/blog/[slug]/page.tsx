@@ -71,6 +71,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Add ShareButtons component here */}
       <ShareButtons title={post.title} slug={slug} />
 
+      {/* Add the heading here */}
+      {recentPosts.length > 0 && (
+        <h2 className="text-2xl font-semibold mt-12 text-center md:text-left border-t border-border pt-8">More Recent Articles</h2>
+      )}
+
       {/* Use the RecentPostsCarousel component */}
       <RecentPostsCarousel posts={recentPosts} />
     </div>
