@@ -4,72 +4,49 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 const HowItWorks = () => {
   const features = [
     {
-      title: 'Achieve Unmatched Clarity with Structured Reviews',
-      description: 'Systematically analyze your performance and refine your strategy with built-in Daily, Weekly, Monthly, Quarterly, and Annual review frameworks. Stop repeating mistakes and start building consistent success.',
+      title: 'Emotional Management Modules',
+      description: 'Tools to manage greed, fear, anxiety, regret and more.',
     },
     {
-      title: 'Forge Winning Habits',
-      description: 'Cut through the noise with tailored questions designed to boost your self-awareness, enforce accountability, and cultivate the discipline required for long-term profitability.',
+      title: 'Structured Performance Reviews',
+      description: 'Systematically analyze cognitive performance with Daily, Weekly, Monthly, Quarterly & Annual review frameworks.',
     },
     {
-      title: 'Conquer Costly Psychological Traps',
-      description: 'Master your trading psychology! Our dedicated emotional-awareness modules help you identify and overcome common pitfalls like:',
-      subItems: [
-        'Letting hope and fantasy dictate decisions.',
-        'Trading from resentment and a need for control.',
-        'Being paralyzed by guilt, shame, or entitlement.',
-        'Falling victim to revenge trades or chasing elusive "big wins".',
-      ],
+      title: 'Cognitive Enhancement Tools',
+      description: 'Sharpen decision-making with tools designed to block cognitive biases and improve decision quality.',
     },
     {
-      title: 'Deepen Your Market Understanding',
-      description: 'Go beyond surface-level analysis with guided, reflective journaling prompts that help you truly understand the \'why\' behind your trading decisions.',
+      title: '360° Session Support',
+      description: 'Modules to prepare you mentally pre-session, stay focussed mid-session and review effectively post-session.',
     },
     {
-      title: 'Connect Mood to Market Moves',
-      description: 'Leverage powerful mood tracking capabilities to visualize the critical link between your emotional state and your trading outcomes. Identify your triggers before they impact your P&L.',
+      title: 'Custom Metric Tracking',
+      description: 'Define and monitor your own custom metrics for unique personalized insights.',
     },
     {
-      title: 'Transform Data into Decisions',
-      description: 'Don\'t just track – improve. Receive actionable insights based directly on your inputs, providing clear steps to refine your approach.',
+      title: 'Reflective Journaling Prompts',
+      description: 'Guided questions to deepen self-understanding and uncover the \'why\' behind your decisions.',
     },
-    {
-        title: 'Monitor Your Unique Edge',
-        description: 'Go beyond generic analytics. Define and track the custom metrics that matter most to your specific trading style and strategy.',
-      },
-    {
-      title: 'Prepare, Perform, Reflect',
-      description: 'Use Mental Edge before trading to prepare your mindset, during sessions to stay calm and focused, and afterwards to analyze performance and learn.'
-    }
   ];
 
   return (
     <section className="py-16 md:py-24 bg-muted">
       <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl mb-6">
-          How Mental Edge Helps You Gain Your Edge
+          How Mental Edge Works
         </h2>
         <p className="text-lg text-muted-foreground/80 mb-12">
-          Tired of emotional trading errors and inconsistent results? Mental Edge provides the structure and insight you need to elevate your trading game by finding your mental edge.
+          Mental Edge shifts the focus from P&L to process. It provides structured tools and insights to master your trading psychology, improve consistency, and achieve repeatable results.
         </p>
         <div className="mb-12 text-left">
-          {/* <h3 className="text-2xl font-semibold font-heading mb-6 text-center">
-            Here's how we help you:
-          </h3> */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start space-x-3">
                 <CheckCircleIcon className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-foreground/90 mb-1">{feature.title}</p>
-                  <p className="text-muted-foreground/90 text-sm mb-1">{feature.description}</p>
-                  {feature.subItems && (
-                    <ul className="list-['-_'] list-inside ml-4 mt-1 space-y-1 text-xs text-muted-foreground/70">
-                      {feature.subItems.map((subItem, subIndex) => (
-                        <li key={subIndex}>{subItem}</li>
-                      ))}
-                    </ul>
-                  )}
+                  <p className="text-muted-foreground/90 text-sm">{feature.description}</p>
+                  {/* Note: Removed subItems display logic as it's no longer in the data */}
                 </div>
               </div>
             ))}

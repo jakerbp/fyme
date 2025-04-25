@@ -1,7 +1,19 @@
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button'; // Import the Button component
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"; // Assuming you have this shimmed or will create it
+import { Menu } from 'lucide-react'; // Import the Menu icon
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
@@ -46,8 +58,8 @@ const Header = () => {
           <span className="font-semibold text-xl font-body text-primary">MentalEdge</span>
         </Link>
 
-        {/* Navigation */}
-        <nav className="flex items-center space-x-4 lg:space-x-6">
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center space-x-4 xs:flex lg:space-x-6">
           <Link href="/blog" className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground">
             Blog
           </Link>
@@ -58,6 +70,39 @@ const Header = () => {
             Start Free
           </Button>
         </nav>
+
+        {/* Mobile Navigation (Dropdown Menu) */}
+        <div className="flex items-center space-x-4 xs:hidden">
+          {/* Show Start Free button only between xxs and xs */}
+          <Button 
+            href="/coming-soon" 
+            size="sm" 
+            variant="default" 
+            className="xxs:inline-flex hidden" // Hide below xxs, show above xxs (up to xs)
+          >
+            Start Free
+          </Button>
+          <DropdownMenu open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem asChild>
+                <Link href="/blog">Blog</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/assessment">Assessment</Link>
+              </DropdownMenuItem>
+              {/* Show Start Free link only below xxs */}
+              <DropdownMenuItem asChild className="xxs:hidden"> 
+                <Link href="/coming-soon">Start Free</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
   );

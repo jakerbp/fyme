@@ -2,6 +2,8 @@ import { allPosts, type Post } from "content-collections";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import RecentPostsCarousel from "@/components/RecentPostsCarousel";
+import ShareButtons from "@/components/ShareButtons";
 
 // Generate static paths for all posts at build time
 export async function generateStaticParams() {
@@ -36,6 +38,12 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  // Get recent posts (excluding the current one)
+  const recentPosts = allPosts
+    .filter((p: Post) => p._meta.path !== slug) // Exclude current post
+    .sort((a: Post, b: Post) => b.date.getTime() - a.date.getTime()) // Sort by date descending
+    .slice(0, 10); // Take the top 10
+
   return (
     <div className="container mx-auto px-4 py-12 max-w-3xl">
       {/* Back to Blog Link */}
@@ -55,10 +63,16 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Render the HTML content generated from Markdown */}
         <div
-          className="prose lg:prose-xl max-w-none font-sans" // Restore original classes
+          className="prose lg:prose-xl max-w-none font-sans"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
+
+      {/* Add ShareButtons component here */}
+      <ShareButtons title={post.title} slug={slug} />
+
+      {/* Use the RecentPostsCarousel component */}
+      <RecentPostsCarousel posts={recentPosts} />
     </div>
   );
 } 
