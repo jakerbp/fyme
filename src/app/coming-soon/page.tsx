@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const ComingSoonPage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-background">
+    <main className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24 bg-background">
       <div className="container mx-auto max-w-2xl text-center">
         <h1 className="text-4xl font-bold tracking-tight text-primary font-heading mb-4 sm:text-5xl md:text-6xl">
           Coming Soon!
@@ -18,12 +18,11 @@ const ComingSoonPage = () => {
           src="https://tally.so/embed/mDbkkq?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1"
           loading="lazy"
           width="100%"
-          height={900}
           frameBorder={0}
           marginHeight={0}
           marginWidth={0}
           title="Mental Edge - Tester waitlist"
-          className="mt-12"
+          className="mt-12 h-[1200px] md:h-[900px] xs:h-[1500px]"
           style={{ overflow: 'hidden' }}
         ></iframe>
       </div>
