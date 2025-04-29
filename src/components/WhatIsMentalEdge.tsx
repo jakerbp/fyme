@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import mockupImage from '/public/images/Mockup.png'; // Corrected casing
+import mockupImage from '/public/images/mockup.png'; 
 
 const WhatIsMentalEdge = () => {
   return (
     <section className="py-16 md:py-24 bg-background text-foreground overflow-hidden">
-      <div className="container px-4 md:px-6 mx-auto">
+      <div className="container px-4 md:px-6 mx-0 sm:mx-auto">
         {/* Heading - Centered, original size, above columns */}
         <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl mb-10 md:mb-12 text-center">
           What is Mental Edge?
