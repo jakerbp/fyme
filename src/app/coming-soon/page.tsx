@@ -24,6 +24,7 @@ const ComingSoonPage = () => {
           marginWidth={0}
           title="Mental Edge - Tester waitlist"
           className="mt-12"
+          style={{ overflow: 'hidden' }}
         ></iframe>
       </div>
     </main>
