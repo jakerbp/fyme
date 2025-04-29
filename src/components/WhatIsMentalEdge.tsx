@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import mockupImage from '/public/images/mockup.png'; // Adjust path if needed
+import mockupImage from '/images/mockup.png'; // Adjust path if needed
 
 const WhatIsMentalEdge = () => {
   return (
