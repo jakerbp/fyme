@@ -1,13 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function PrivacyPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
-      <p className="mb-4">Last updated: [Date]</p>
+      <p className="mb-4">Last updated: 21st April 2025</p>
 
       <p className="mb-4">
-        [Your Company Name] ("us", "we", or "our") operates the [Your Website URL] website (the "Service").
+        Mental Edge ("us", "we", or "our") operates the FindYourMentalEdge.com website (the "Service").
       </p>
 
       <p className="mb-4">
@@ -41,7 +42,7 @@ export default function PrivacyPage() {
       </p>
 
       <h2 className="text-2xl font-bold mt-6 mb-2">Use of Data</h2>
-      <p className="mb-4">[Your Company Name] uses the collected data for various purposes:</p>
+      <p className="mb-4">Mental Edge uses the collected data for various purposes:</p>
       <ul className="list-disc list-inside mb-4 ml-4">
         <li>To provide and maintain the Service</li>
         <li>To notify you about changes to our Service</li>
@@ -56,9 +57,11 @@ export default function PrivacyPage() {
 
       <h2 className="text-2xl font-bold mt-6 mb-2">Contact Us</h2>
       <p className="mb-4">If you have any questions about this Privacy Policy, please contact us:</p>
-      <ul className="list-disc list-inside mb-4 ml-4">
-        <li>By email: [Your Email Address]</li>
-      </ul>
+      <p className="mb-4">
+        <Link href="/contact" className="text-blue-600 hover:underline">
+          Contact Page
+        </Link>
+      </p>
     </div>
   );
 } 
