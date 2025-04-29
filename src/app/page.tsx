@@ -14,7 +14,7 @@ export default function HomePage() {
       <HowItWorks />
       <WhyTradersUseIt />
       <AssessmentTeaser />
-      <BlogPreview /> {/* Contains placeholder content for now */}
+      <BlogPreview /> 
       <FinalCTA />
     </>
   );
