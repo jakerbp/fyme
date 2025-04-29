@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import mockupImage from '/images/mockup.png'; // Adjust path if needed
+import mockupImage from '/public/images/Mockup.png'; // Corrected casing
 
 const WhatIsMentalEdge = () => {
   return (
